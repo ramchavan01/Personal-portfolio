@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Name of your web site" />
+  <meta name="author" content="Marketify" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Ram Chavan's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Google Fonts CDN (Jost and Open Sans) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" type="text/css" href="css/plugins.css" />
+  <link rel="stylesheet" type="text/css" href="css/dark.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" href="css/project_cards.css">
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: all 0.2s linear;
+    }
+
+
+    .list_inner .text p {
+      margin-left: 0px;
+      position: relative;
+      width: 100%;
+      top: 38px;
+      text-align: justify;
+    }
+
+    /* education section starts */
+    /* education media queries starts*/
+    @media screen and (max-width: 600px) {
+      .education .box-container .box {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .education .box-container .box .image {
+        width: 100%;
+        height: 25rem;
+      }
+
+      .education .box-container .box img {
+        width: 100%;
+      }
+
+      .education .box-container .box .content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        flex-wrap: wrap;
+        flex: 0;
+      }
+
+      .education .btns {
+        margin-top: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        flex-wrap: wrap;
+      }
+    }
+
+    /* education media queries ends*/
+    /* education section ends */
+
+    /* work section starts */
+    #work {
+
+      background: linear-gradient(to bottom, #1f1f24, #2e2e36);
+    }
+
+    .work h2 {
+      color: #fff;
+      padding: 1rem;
+    }
+
+    .work .heading span {
+      color: rgb(255, 230, 0);
+    }
+
+    .work .box-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2rem;
+    }
+
+    .work .box-container .box {
+      display: grid;
+      justify-content: space-evenly;
+      grid-template-columns: auto auto auto;
+      flex: 1 1 30rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      position: relative;
+      /* overflow: hidden; */
+      height: 30rem;
+    }
+
+    .work .box-container .box img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .work .box-container .box .content {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 85%;
+      left: 0;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work .box-container .box .content .tag {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 4.5rem;
+      width: 100%;
+      padding-left: 1rem;
+      background: #ffd900;
+    }
+
+    .work .box-container .box .content .tag h3 {
+      font-size: 2rem;
+    }
+
+    .work .box-container .box:hover .content {
+      top: 25%;
+    }
+
+    .work .desc {
+      margin: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .work .desc p {
+      font-size: 1.5rem;
+    }
+
+    .work .desc .btns {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    .work .desc .btns .btn {
+      line-height: 0;
+      display: inline;
+      padding: 1.5rem 2.5rem;
+      border-radius: 0.5rem;
+      font-size: 1.5rem;
+      color: #fff;
+      background: rgb(12, 12, 12);
+      margin-right: 2rem;
+    }
+
+    .work .desc .btns .btn:hover {
+      background: #310ae0f5;
+    }
+
+    .work .viewall {
+      display: flex;
+      justify-content: center;
+    }
+
+    .work .viewall .btn {
+      position: relative;
+      line-height: 0;
+      padding: 1.6rem 3rem;
+      border-radius: 0.5em;
+      transition: 0.5s;
+      color: rgb(255, 255, 255);
+      font-weight: 700;
+      border: 2px solid #fff;
+      box-shadow: 0px 5px 10px rgba(65, 84, 241, 0.4);
+      text-align: center;
+    }
+
+    .work .viewall .btn span {
+      font-weight: 600;
+      font-size: 1.7rem;
+      font-family: "Nunito", sans-serif;
+    }
+
+    .work .viewall .btn i {
+      margin-left: 0.3rem;
+      font-size: 1.5rem;
+      transition: 0.3s;
+    }
+
+    .work .viewall .btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .work .viewall .btn:hover i {
+      transform: translateX(5px);
+    }
+
+    /* work section ends */
+
+    /* experience section starts */
+    .experience .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .experience .timeline::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      background: #020133;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      z-index: -2;
+    }
+
+    .experience .container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+    /*circles on timeline*/
+    .experience .container::after {
+      content: "\f0b1";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: rgb(255, 255, 255);
+      border: 4px solid #ff9f55;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+      font-size: 1.89rem;
+      text-align: center;
+      font-weight: 600;
+      color: #02094b;
+      font-family: "Font Awesome\ 5 Free";
+    }
+
+    .experience .left {
+      left: -27%;
+    }
+
+    .experience .right {
+      left: 27%;
+    }
+
+    /* arrows pointing right */
+    .experience .left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid #f68c09;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent #f68c09;
+    }
+
+    /* arrows pointing left  */
+    .experience .right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid #f68c09;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent #f68c09 transparent transparent;
+    }
+
+    .experience .right::after {
+      left: -16px;
+    }
+
+    .experience .content {
+      background-color: #f68c09;
+      position: relative;
+      border-radius: 6px;
+    }
+
+    .experience .content .tag {
+      font-size: 1.3rem;
+      padding-top: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .experience .content .desc {
+      margin-left: 1.5rem;
+      padding-bottom: 1rem;
+    }
+
+    .experience .content .desc h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .experience .content .desc p {
+      font-size: 1.2rem;
+    }
+
+    /* view all button */
+    .morebtn {
+      display: flex;
+      justify-content: center;
+    }
+
+    .morebtn .btn {
+      position: relative;
+      line-height: 0;
+      padding: 1.6rem 3rem;
+      border-radius: 0.5em;
+      transition: 0.5s;
+      color: #fff;
+      background: #2506ad;
+      box-shadow: 0px 5px 10px rgba(48, 68, 247, 0.6);
+      text-align: center;
+    }
+
+    .morebtn .btn span {
+      font-weight: 600;
+      font-size: 1.7rem;
+      font-family: "Nunito", sans-serif;
+    }
+
+    .morebtn .btn i {
+      margin-left: 0.3rem;
+      font-size: 1.5rem;
+      transition: 0.3s;
+    }
+
+    .morebtn .btn:hover {
+      background: #1a047e;
+    }
+
+    .morebtn .btn:hover i {
+      transform: translateX(5px);
+    }
+
+    /* Media queries - Responsive timeline on screens less than 600px wide */
+    @media screen and (max-width: 600px) {
+      .experience {
+        min-height: 80vh;
+      }
+
+      .experience .timeline {
+        margin-top: 2rem;
+      }
+
+      .experience .timeline::after {
+        left: 31px;
+      }
+
+      .experience .container {
+        width: 100%;
+        padding-left: 8rem;
+        padding-right: 2rem;
+      }
+
+      .experience .container::after {
+        font-size: 2.2rem;
+      }
+
+      .experience .container::before {
+        left: 61px;
+        border: medium solid #f68c09;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #f68c09 transparent transparent;
+      }
+
+      .experience .left::after {
+        left: 15px;
+      }
+
+      .experience .right::after {
+        left: 15px;
+      }
+
+      .experience .right {
+        left: 0%;
+      }
+
+      .morebtn {
+        margin-top: 3rem;
+      }
+    }
+
+    #PopUp_inner_paragraph {
+      margin-left: -156px;
+      position: relative;
+      width: 162%;
+      top: 16px;
+      text-align: justify;
+    }
+
+
+
+    @media screen and (max-width: 414px) {
+      .title .text>p {
+        margin-left: 0;
+        position: relative;
+        width: 100%;
+        top: 16px;
+        text-align: justify;
+      }
+
+      #service ul>li {
+        font-size: 11px;
+      }
+    }
+
+    /* experience media queries ends */
+    /* experience section ends */
+  </style>
+</head>
+
+<body class="dark">
+
+  <div class="dizme_tm_all_wrap" data-magic-cursor="show">
+    <div class="dizme_tm_mobile_menu">
+      <div class="mobile_menu_inner">
+        <div class="logo" style="left: 0; 
+          width: 146px;">
+          <a href="#" style="list-style: none; text-decoration: none;">
+            <h1>Ram</h1>
+          </a>
+        </div>
+        <div class="mobile_in" style="margin-left: 290px;">
+          <div class="trigger">
+            <div class="hamburger hamburger--slider">
+              <div class="hamburger-box">
+                <div class="hamburger-inner">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+
+        <div class="dropdown_inner">
+
+          <ul class="anchor_nav">
+            <li class="current"><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#blog">Experience</a></li>
+            <li><a href="#skills">Skill</a></li>
+            <li><a href="#education">Education</a></li>
+            <!-- <li><a href="#work">Projects</a></li> -->
+            <li><a href="#contact">Contact</a></li>
+            <li class="download_cv">
+              <a href="RamChavan_QAEngineer_Resume.pdf" download=""><span>Download CV</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="dizme_tm_header">
+      <div class="container" style="margin-right: -276px;">
+        <div class="logo" style="position: absolute;
+        right: 126%;
+        top: 0;
+        transform-style: preserve-3d;">
+          <a href="#" style="list-style: none; text-decoration: none;">
+            <h1>Ram</h1>
+          </a>
+        </div>
+        <div class="inner">
+          <div class="menu">
+            <ul class="anchor_nav">
+              <li class="current"><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#service">Service</a></li>
+              <li><a href="#blog">Experience</a></li>
+              <li><a href="#skills">Skill</a></li>
+              <li><a href="#education">Education</a></li>
+              <!-- <li><a href="#work">Projects</a></li> -->
+              <li><a href="#contact">Contact</a></li>
+              <li class="download_cv">
+                <a href="RamChavan_QAEngineer_Resume.pdf" download><span>Download CV</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dizme_tm_section" id="home">
+      <div class="dizme_tm_hero">
+        <div class="background"
+          data-img-url="https://img.freepik.com/free-vector/abstract-black-lines-geometric-background_677411-2748.jpg"
+          style="position: fixed; z-index: -1;"></div>
+        <div class="container">
+          <div class="content">
+            <div class="details">
+              <div class="hello">
+                <h3 class="orangeText">Hello, I'm</h3>
+              </div>
+              <div class="name">
+                <h3 style="text-transform: capitalize">RAM CHAVAN</h3>
+              </div>
+              <div class="job">
+                <p>
+                  A <span class="greenText"> QA Tester</span> From
+                  <span class="yellowText">Maharastra , India</span>
+                </p>
+              </div>
+              <div class="text">
+                <p>
+                  I am a QA tester based in Maharashtra with
+                  <span style="color: rgb(212, 216, 7)">3.5+ years</span> of
+                  experience in ensuring software quality and reliability. I
+                  am dedicated to delivering thorough testing and meticulous
+                  attention to detail in every project I undertake.
+                </p>
+              </div>
+              <div class="button">
+                <div class="dizme_tm_button">
+                  <a class="anchor" href="#about"><span>About Me</span></a>
+                </div>
+                <div class="social">
+                  <ul>
+                    <li>
+                      <a href="https://www.instagram.com/rc_1626/" target="_blank"><i
+                          class="fa-brands fa-square-instagram"></i></a>
+                    </li>
+                    <li>
+                      <a href="mailto:ramchavan00001@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/in/ramchavan8585" target="_blank"><i
+                          class="fa-brands fa-linkedin"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://t.me/RamChavan03" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://github.com/ramchavan00001/" target="_blank"><i
+                          class="fa-brands fa-github"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://wa.me/9359032001" target="_blank"><i class="fa-brands fa-whatsapp"></i>
+                      </a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="avatar">
+              <div class="image">
+                <img src="img/Ram.png" alt />
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave child-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dizme_tm_section" id="about" style="background: #2A2D34;">
+      <div class="dizme_tm_about">
+        <div class="container">
+          <div class="wrapper">
+            <div class="left">
+              <div class="image">
+                <img src="https://marketifythemes.net/html/dizme/img/about/2.jpg" alt />
+                <div class="numbers year"></div>
+                <div class="numbers project"></div>
+              </div>
+            </div>
+            <div class="right">
+              <div class="title wow fadeInUp" data-wow-duration="1s">
+                <span>I'm a Associate Quality Engineer QA</span>
+                <h3>Testing Solutions Tailored for You</h3>
+              </div>
+              <div class="text wow fadeInUp" data-wow-duration="1s">
+                <p style="color: white; text-align: justify;">
+                  Hello there...! <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I am Detail-oriented Software
+                  QA Tester With over 3.5+ years of experience as a Quality Assurance (QA) Tester, I have honed my skills
+                  in ensuring software excellence and reliability through meticulous manual testing processes. My
+                  expertise lies in designing and executing comprehensive test plans, identifying critical defects, and
+                  collaborating closely with development teams to deliver high-quality software solutions.
+                  Throughout my career, I have developed a keen eye for detail and a strong understanding of various
+                  testing methodologies, including regression, integration, and user acceptance testing. My proficiency
+                  in using industry-standard tools like JIRA and Bugzilla has enabled me to efficiently track and manage
+                  defects, contributing to timely project completions and successful product launches. <br>
+
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am passionate about
+                  continuous improvement and have been instrumental in implementing process
+                  enhancements that have increased test coverage and reduced manual testing efforts. My ability to
+                  effectively communicate with cross-functional teams ensures a clear understanding of requirements and
+                  swift resolution of issues, ultimately leading to superior software quality and enhanced customer
+                  satisfaction.
+                  <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am excited to leverage my
+                  skills and experience to contribute to innovative projects and drive
+                  excellence in software quality.
+                </p>
+              </div>
+              <div class="dizme_tm_button wow fadeInUp" data-wow-duration="1s">
+                <a class="anchor" href="#contact"><span>Hire Me</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="brush_1 wow fadeInLeft" data-wow-duration="1s">
+          <img src="img/brushes/about/1.png" alt />
+        </div>
+        <div class="brush_2 wow fadeInRight" data-wow-duration="1s">
+          <img src=" " alt />
+        </div>
+      </div>
+    </div>
+
+
+    <!-- service Section  -->
+    <!-- 
+    <div class="dizme_tm_section" id="service">
+      <div class="dizme_tm_services">
+        <div class="container">
+          <div class="dizme_tm_main_title" data-align="center">
+            <span>Services</span>
+            <h3>What I Do for Clients</h3>
+            <p>
+              Most common methods for designing websites that work well on
+              desktop is responsive and adaptive design
+            </p>
+          </div>
+          <div class="service_list">
+            <ul>
+              <li class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s" style="
+                  visibility: visible;
+                  animation-duration: 1s;
+                  animation-delay: 0.2s;
+                  animation-name: fadeInRight;
+                ">
+                <div class="list_inner tilt-effect" style="
+                    will-change: transform;
+                    transform: perspective(300px) rotateX(0deg) rotateY(0deg);
+                  ">
+                  <span class="icon">
+                    <i style="font-size: 37px" class="fa-solid fa-code"></i>
+                  </span>
+
+                  <div class="title">
+                    <h3>Web Design</h3>
+                    <span class="price">Starts from <span class="orangeText">$399</span></span>
+                  </div>
+                  <div class="text">
+                    <p style="color: white;">
+                      Web design refers to the design of websites that are
+                      displayed on the internet. It usually refers to the user
+                      experience aspects of website development
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="brush_1 wow fadeInLeft" data-wow-duration="1s">
+          <img src="img/brushes/service/5.png" alt="" />
+        </div>
+        <div class="brush_2 wow zoomIn" data-wow-duration="1s">
+          <img src="img/brushes/service/6.png" alt="" />
+        </div>
+      </div>
+    </div> -->
+
+
+
+
+
+    <div class="dizme_tm_section" id="service">
+      <div class="dizme_tm_services">
+        <div class="container">
+          <div class="dizme_tm_main_title" data-align="center">
+            <span>Services</span>
+            <h3>What I Do for Clients</h3>
+
+          </div>
+          <div class="service_list">
+            <ul>
+              <li class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"
+                style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInRight;">
+                <div class="list_inner tilt-effect">
+                  <div class="P_flex_div" >
+                    <span class="icon">
+
+
+                      <img class="back"
+                        src="https://cdn.iconscout.com/icon/premium/png-512-thumb/manual-testing-2011906-1692283.png"
+                        alt="">
+                    </span>
+                    <div class="title"><br>
+                      <h3>Manual QA</h3>
+                      <!-- <span class="price">Starts from <span class="orangeText">$399</span></span> -->
+                    </div>
+                  </div>
+                  <div class="text" style="color: white; width: 100%;">
+                    <p style="width: 100%;">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manual QA (Quality
+                      Assurance) refers to the process of testing software or applications manually to find defects or
+                      bugs. It involves human testers who carefully execute test cases without the use of automated
+                      tools. The primary goals of manual QA are to ensure the software meets specified requirements,
+                      functions correctly, and delivers a satisfactory user experience.</p>
+                  </div>
+
+                  <a class="dizme_tm_full_link" href="#"></a>
+                  <img class="popup_service_image"
+                    src="https://miro.medium.com/v2/resize:fit:338/1*qBcFakOclmDcX0CG6UQpRg.jpeg" alt="">
+                  <div class="service_hidden_details">
+                    <img src="https://miro.medium.com/v2/resize:fit:338/1*qBcFakOclmDcX0CG6UQpRg.jpeg" style="position: relative;
+                    width: 100%;
+                    height: 395px;
+                " alt=""><br>
+                    <div class="service_popup_informations">
+                      <div class="descriptions" style="color: white; text-align: justify;">
+                        <p><strong>Functional Testing:</strong>
+                          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Verifying
+                          that software applications perform their intended functions correctly.
+                        </p>
+                        <p><strong>Usability
+                            Testing:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Ensuring the software is user-friendly and meets the needs of its intended users.</p>
+                        <p><strong>Regression
+                            Testing:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Re-running previously completed tests to ensure new changes haven't introduced new bugs.</p>
+                        <p><strong>Exploratory
+                            Testing:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Manual testing without predefined test cases to identify unexpected behavior and issues.</p>
+                        <p><strong>Cross-Browser
+                            Testing:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Checking the functionality and compatibility of web applications across different browsers.
+                        </p>
+                        <p><strong>Cross-Platform
+                            Testing:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Verifying that applications work consistently across different platforms and devices.</p>
+                        <p><strong>Test Case Design and
+                            Execution:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Creating and executing detailed test cases to cover all functional aspects of the application.
+                        </p>
+                        <p><strong>Bug Reporting and
+                            Tracking:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Identifying, reporting, and tracking defects using bug tracking tools.</p>
+                        <p><strong>Acceptance
+                            Testing:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Validating that the software meets the specified requirements and is ready for deployment.</p>
+                        <p><strong>Localization
+                            Testing:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Ensuring that the software functions properly in different languages and regional settings.
+                        </p>
+                        <p><strong>Smoke
+                            Testing:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Performing a preliminary check to ensure the basic functionality of the application is
+                          working.</p>
+                        <p><strong>Sanity
+                            Testing:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Verifying specific functionalities after minor changes to ensure they work as expected.</p>
+                        <p><strong>User Interface (UI) Testing:</strong>
+                          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Ensuring that the application's user interface meets design specifications and is consistent
+                          across different devices.
+                        </p>
+                        <p><strong>Documentation
+                            Review:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Reviewing and validating software documentation to ensure it is accurate and complete.</p>
+                        <p><strong>Accessibility Testing:</strong>
+                          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Ensuring that the software is accessible to users with disabilities, complying with relevant
+                          standards and guidelines.
+                        </p>
+                        <p><strong>Mobile
+                            Testing:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Verifying the functionality, performance, and usability of mobile applications on various
+                          devices and operating systems.</p>
+                        <br>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+              <li class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"
+                style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInRight;">
+                <div class="list_inner tilt-effect">
+                  <span class="icon">
+                    <img class="back" src="https://static.thenounproject.com/png/4694616-200.png" alt="">
+                  </span>
+                  <div class="title">
+                    <h3>Automation QA</h3>
+                    <!-- <span class="price">Starts from <span class="orangeText">$399</span></span> -->
+                  </div>
+                  <div class="text" style="color: white;">
+                    <p>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Automation QA
+                      (Quality Assurance) refers to the process of using automated scripts and tools to perform software
+                      testing. It involves developing and executing automated test cases that verify the functionality,
+                      performance, and reliability of applications. Automation QA aims to increase testing efficiency,
+                      repeatability, and coverage by reducing manual intervention. The primary goals of Automation QA
+                      are to enhance testing accuracy, accelerate release cycles, and improve overall software quality
+                      by integrating automated tests into the development and deployment pipeline.
+                    </p>
+                  </div>
+
+                  <a class="dizme_tm_full_link" href="#"></a>
+                  <img class="popup_service_image"
+                    src="https://miro.medium.com/v2/resize:fit:338/1*qBcFakOclmDcX0CG6UQpRg.jpeg" alt="">
+                  <div class="service_hidden_details">
+                    <img
+                      src="https://lh3.googleusercontent.com/VRcGp86L29bK-zwY95C_iI-BqfbiMrsLK11hefmdEkioIvmBfsrhK0Tgv8bOZagU3BmglH_F3NoXKqK4ETPsho23vsWIdJxCmUWhvQzpwSiUpXCA3fiujoqYNztEGIIgukNylDaU"
+                      style="position: relative;
+                                                   width: 100%;
+                                                   height: 395px;
+                                                   " alt="">
+                    <div class="service_popup_informations">
+                      <div class="descriptions" style="color: white; text-align: justify;">
+                        <h4>Test Automation Strategy:</h4>
+                        <p>Developing a tailored plan for integrating test automation into the software development
+                          process.</p>
+                        <h5 style="margin-left: 29px;">Activities:</h5>
+                        <ul style="margin-left: 72px;">
+                          <li>Identifying key areas for automation</li>
+                          <li>Selecting appropriate tools and frameworks</li>
+                          <li>Defining goals and success metrics</li>
+                          <li>Creating a roadmap for implementation</li>
+                        </ul>
+
+                        <h4>Automated Test Case Development:</h4>
+                        <p>Creating scripts that automatically execute test cases, ensuring consistency and
+                          repeatability.</p>
+                        <h5 style="margin-left: 29px;">Activities:</h5>
+                        <ul style="margin-left: 72px;">
+                          <li>Writing automated test scripts using programming languages or test automation tools</li>
+                          <li>Validating their accuracy against expected outcomes</li>
+                        </ul>
+
+                        <h4>Test Framework Development:</h4>
+                        <p>Building a reusable structure that supports the creation and execution of automated tests.
+                        </p>
+                        <h5 style="margin-left: 29px;">Activities:</h5>
+                        <ul style="margin-left: 72px;">
+                          <li>Selecting or building frameworks (e.g., Selenium for web apps, Appium for mobile apps)
+                          </li>
+                          <li>Setting up the framework structure and integrating libraries to enhance testing
+                            capabilities</li>
+                        </ul>
+
+                        <h4>Continuous Integration and Continuous Deployment (CI/CD) Integration:</h4>
+                        <p>Embedding automated tests into the CI/CD pipeline to ensure ongoing quality checks.</p>
+                        <h5 style="margin-left: 29px;">Activities:</h5>
+                        <ul style="margin-left: 72px;">
+                          <li>Configuring CI/CD tools (e.g., Jenkins, GitLab CI, CircleCI) to run automated tests on
+                            code commits</li>
+                          <li>Setting up build triggers and automating deployment processes</li>
+                        </ul>
+
+                        <!-- Add the rest of the descriptions and activities as per your provided list -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="brush_1 wow fadeInLeft" data-wow-duration="1s"
+          style="visibility: visible; animation-duration: 1s; animation-name: fadeInLeft;"><img
+            src="img/brushes/service/5.png" alt=""></div>
+        <div class="brush_2 wow zoomIn" data-wow-duration="1s"
+          style="visibility: visible; animation-duration: 1s; animation-name: zoomIn;"><img
+            src="img/brushes/service/6.png" alt=""></div>
+      </div>
+    </div>
+
+    <!-- Experience section -->
+
+    <div class="dizme_tm_section" id="blog">
+      <div class="dizme_tm_news">
+        <div class="container">
+          <div class="dizme_tm_main_title" data-align="center">
+            <span>My Experience</span>
+
+          </div>
+          <div class="news_list">
+            <ul>
+              <li class="wow fadeInUp" data-wow-duration="1s">
+                <div class="list_inner">
+                  <div class="image">
+                    <img src="https://shellexa.com/wp-content/uploads/2024/06/Lockup-Color-250x77.png" alt style="background-size: cover;    
+    position: relative;" />
+                    <div class="main"
+                      data-img-url="https://shellexa.com/wp-content/uploads/2024/06/Lockup-Color-250x77.png"></div>
+
+                    <a class="dizme_tm_full_link" href="#"></a>
+                  </div>
+                  <div class="details">
+                    <span class="category"><a href="#">Mannual QA Engineer</a></span>
+                    <h3 class="title">
+                      <a href="#">
+                        ShellExa InfoTech Pvt. Ltd,Noida</a>
+                      <div class="date">
+                        <span>2/2023 - 06/2024</span>
+                      </div>
+                    </h3>
+                  </div>
+                  <div class="news_hidden_details">
+                    <div class="news_popup_informations">
+                      <div class="text" style="color: rgb(255, 255, 255);">
+                        <p>
+                        <ul style="margin-left: 40px; list-style:circle">
+                          <li>Conducting manual testing on various software applications</li>
+                          <li>Identifying, documenting, and tracking software defects</li>
+                          <li>Collaborating with the development team to ensure software quality</li>
+                          <li>Executing test cases and reporting results</li>
+                          <li>Ensuring that the software meets business requirements and quality standards</li>
+                        </ul>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </li>
+              <li class="wow fadeInUp" data-wow-duration="1s">
+                <div class="list_inner">
+                  <div class="image">
+                    <img
+                      src="https://cdn-iladnhb.nitrocdn.com/LvQUWuVYlFHmxxoBdEyFLTFOKffSsYHv/assets/images/optimized/rev-e2c2994/www.novelvox.com/wp-content/uploads/2021/10/novelvox-logo-190x42.png"
+                      style="background-size: cover;    
+    position: relative;" alt />
+                    <div class="main"
+                      data-img-url="https://cdn-iladnhb.nitrocdn.com/LvQUWuVYlFHmxxoBdEyFLTFOKffSsYHv/assets/images/optimized/rev-e2c2994/www.novelvox.com/wp-content/uploads/2021/10/novelvox-logo-190x42.png"  ">
+                    </div>
+
+                    <a class="dizme_tm_full_link" href="#"></a>
+                  </div>
+                  <div class="details">
+                    <span class="category"><a href="#">Associate QA Engineer</a></span>
+                    <h3 class="title">
+                      <a href="#">
+                        NOVELVOX SOFTWARES INDIA PVT. LTD.</a>
+                      <div class="date">
+                        <span>05/2021 - 01/2023</span>
+                      </div>
+                    </h3>
+                  </div>
+                  <div class="news_hidden_details">
+                    <div class="news_popup_informations">
+                      <div class="text" style="color: rgb(255, 255, 255);">
+                        <p>
+                        <ul style="list-style: circle; margin-left: 40px;">
+                          <li>Conducted manual testing on various software applications to ensure functionality,
+                            usability, and adherence to specifications.</li>
+                          <li>Developed and executed test plans, test cases, and test scripts based on product
+                            requirements.</li>
+                          <li>Identified and documented software defects, tracked issues through resolution, and
+                            verified fixes.</li>
+                          <li>Collaborated with cross-functional teams including developers, product managers, and
+                            designers to communicate bugs and ensure timely resolution.</li>
+                          <li>Participated in requirement analysis and reviewed functional and technical documentation.
+                          </li>
+                          <li>Contributed to the improvement of testing processes and methodologies.</li>
+                        </ul>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="wow fadeInUp" data-wow-duration="1s">
+                <div class="list_inner">
+                  <div class="image">
+                    <img src="https://afourtech.com/wp-content/uploads/2023/08/A4Logotype-final-Whitenew1.svg" alt />
+                    <div class="main"
+                      data-img-url="https://afourtech.com/wp-content/uploads/2023/08/A4Logotype-final-Whitenew1.svg"
+                      style="width: 100%; height: 100px;">
+                    </div>
+
+                    <a class="dizme_tm_full_link" href="#"></a>
+                  </div>
+                  <div class="details" style="margin-top: -78px;">
+                    <span class="category"><a href="#">Software Trainee QA
+                      </a></span>
+                    <h3 class="title">
+                      <a href="#">
+                        Afour Technologies Pvt Ltd.</a>
+                      <div class="date">
+                        <span>07/2020 - 04/2021</span>
+                      </div>
+                    </h3>
+                  </div>
+                  <div class="news_hidden_details">
+                    <div class="news_popup_informations">
+                      <div class="text" style="color: rgb(255, 255, 255);">
+                        <p>
+                        <ul style="margin-left: 40px; list-style: circle;">
+                          <li>Assisted in the testing of software applications to identify bugs, usability issues, and
+                            functional errors.</li>
+                          <li>Executed test cases and documented results using tools such as JIRA and TestRail.</li>
+                          <li>Participated in regular team meetings to discuss testing strategies and report on
+                            progress.</li>
+                          <li>Collaborated with senior QA engineers to learn best practices in manual testing
+                            methodologies.</li>
+                          <li>Contributed to the creation and maintenance of test documentation, including test plans
+                            and test cases.</li>
+                          <li>Conducted regression testing on software updates to ensure previous functionalities were
+                            unaffected.</li>
+                          <li>Actively participated in training sessions and workshops to enhance skills in software
+                            testing techniques and tools.</li>
+                          <li>Provided feedback on user interfaces and reported issues to improve the overall user
+                            experience.</li>
+                          <li>Worked closely with developers to communicate identified issues and verify bug fixes.</li>
+                        </ul>
+
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Experience section -->
+
+    <!-- Eduction section -->
+    <div class="dizme_tm_section" id="portfolio">
+
+      <section class="skills" id="skills" style="padding: 31px; ">
+        <div class="dizme_tm_main_title" data-align="center">
+          <span> My Skills</span>
+
+        </div>
+
+        <div class="container">
+          <div class="row" id="skillsContainer">
+
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=2572&format=png&color=000000" />
+                <span>Java</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=24536&format=png&color=000000" />
+                <span> Selenium WebDriver
+                </span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=2572&format=png&color=000000" />
+                <span>TestNG</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=59952&format=png&color=000000" />
+                <span>SQL</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=59916&format=png&color=000000" />
+                <span>HTML</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=107497&format=png&color=000000" />
+                <span>CSS</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000" />
+                <span>Javascript</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=g9mmSxx3SwAI&format=png&color=000000" />
+                <span>Bootstrap</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000" />
+                <span>GIT</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=12598&format=png&color=000000" />
+                <span>GitHub</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=t5FJr3NzrPSm&format=png&color=000000" />
+                <span>Maven</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=39292&format=png&color=000000" />
+                <span>Jenkins</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=oROcPah5ues6&format=png&color=000000" />
+                <span>JIRA</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=59927&format=png&color=000000" />
+                <span>MySQL</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=QEQQKirln6Tf&format=png&color=000000" />
+                <span>Postman</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=OrZMxhqm7nsr&format=png&color=000000" />
+                <span>JMeter</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=w8bYpc8R1PoW&format=png&color=000000" />
+                <span>Manual QA</span>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/?size=100&id=N1AnLQK3VcgT&format=png&color=000000" />
+                <span>Test Case</span>
+              </div>
+
+            </div>
+          </div>
+      </section>
+
+
+      <section class="education" id="education" style="padding: 4rem 9% 2rem">
+        <div class="dizme_tm_main_title" data-align="center">
+          <span>Education</span>
+
+        </div>
+        <div class="box-container">
+          <div class="box">
+            <div class="image">
+              <img draggable="false"
+                src="https://www.joonsquare.com/usermanage/image/business/walchand-college-of-engineering-sangli-13934/walchand-college-of-engineering-sangli-walchand-college-002.jpg"
+                alt="" />
+            </div>
+            <div class="content">
+              <h3>Bachelor of technology </h3>
+              <p style="color: white;">Walchand collage of engineering , Sangli</p>
+              <h4 style="color: green;">2016-2020 | 7.62CGPA</h4>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="image">
+              <img draggable="false"
+                src="https://content.jdmagicbox.com/comp/nanded/g6/9999p2462.2462.121013125347.y8g6/catalogue/yeshwant-mahavidyalaya-nanded-ho-nanded-colleges-3cy5svw-250.jpg"
+                alt="" />
+            </div>
+            <div class="content">
+              <h3>HSC in Science</h3>
+              <p style="color: white;">Yeshwant Mahavidyalay Nanded ,Maharastra </p>
+              <h4 style="color: green;">2015-2026 | 83.23 %</h4>
+            </div>
+          </div>
+          <div class="box">
+            <div class="image">
+              <img draggable="false"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8OLhRmpxbRyrtf_mTCuKZOxRlYYTDxJNwPw&s"
+                alt="" />
+            </div>
+            <div class="content">
+              <h3>SSC </h3>
+              <p style="color: white;">New English School jamner , Maharashtra</p>
+              <h4 style="color: green;">2013-2024 | 87.80%</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="dizme_tm_section" id="contact">
+        <div class="dizme_tm_contact">
+          <div class="container">
+            <div class="dizme_tm_main_title" data-align="center">
+              <span>Contact Me</span>
+              <h3>I Want To Hear From You</h3>
+              <p>
+                Please fill out the form on this section to contact with me. Or
+                call between 9:00 a.m. and 8:00 p.m., Monday through Friday
+              </p>
+            </div>
+            <div class="contact_inner">
+              <div class="left wow fadeInLeft" data-wow-duration="1s">
+                <ul>
+                  <li>
+                    <div class="list_inner">
+                      <div class="icon orangeBackground">
+                        <i class="fa-solid fa-location-dot"></i>
+                      </div>
+                      <div class="short">
+                        <h3>Address</h3>
+                        <span>Pune, Maharashtra, India</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="list_inner">
+                      <div class="icon greenBackground">
+                        <i class="fa-solid fa-envelope"></i>
+                      </div>
+                      <div class="short">
+                        <h3>Email</h3>
+                        <span><a href="mailto:ramchavan00001@gmail.com">ramchavan00001@gmail.com</a></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="list_inner">
+                      <div class="icon purpleBackground">
+                        <i class="fa-solid fa-phone"></i>
+                      </div>
+                      <div class="short">
+                        <h3>Phone</h3>
+                        <span><a href="tel:+919359032001">+91 9359 032 001</a></span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="right wow fadeInRight" data-wow-duration="1s">
+                <div class="fields">
+
+                  <div class="container">
+
+                    <form target="_blank" action="https://formsubmit.co/17af142a7126941767fe9f95659bc6c8" method="POST">
+                      <div class="form-group">
+                        <div class="form-row">
+                          <div class="col">
+                            <input type="text" name="name" class="form-control" placeholder="Full Name *" required>
+                          </div>
+                          <br>
+                          <div class="col">
+                            <input type="email" name="email" class="form-control" placeholder="Email Address *"
+                              required>
+                          </div>
+                          <br>
+                        </div>
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://ram00001.000webhostapp.com/thanks.html">
+                      </div>
+                      <div class="form-group">
+                        <textarea
+                          style="padding: 10px; background: transparent; border: 1px solid #b9b5c9; color: #b9b5c9; border-radius: 14px;"
+                          placeholder="   Your Message *" class="form-control" name="message" rows="5"
+                          required></textarea>
+                      </div>
+                      <br>
+                      <button
+                        style="padding: 14px 31px; font-size: 19px; text-align: center; border: none; font-weight: 600; color: white; border-radius: 34px; background-color: #f75023; cursor: pointer; margin-left: 50px;"
+                        type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="dizme_tm_map wow fadeInUp" data-wow-duration="1s">
+              <div class="mapouter">
+                <div class="gmap_canvas">
+
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.9716663077697!2d73.80886257423644!3d18.484942570263463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf9ec7efff6d%3A0xa6b851f01122aad2!2sDMart!5e0!3m2!1sen!2sin!4v1720458959650!5m2!1sen!2sin"
+                    width="100%" height="375" id="gmap_canvas" frameborder="0" scrolling="no" marginheight="0"
+                    marginwidth="0"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="brush_1 wow fadeInLeft" data-wow-duration="1s">
+            <img src="img/brushes/contact/1.png" alt="Brush 1" />
+          </div>
+        </div>
+      </div>
+
+      <div class="dizme_tm_section">
+        <div class="dizme_tm_copyright">
+          <div class="container">
+            <div class="inner">
+              <div class="left wow fadeInLeft" data-wow-duration="1s">
+                <p>
+                  Developed Ram Chavan
+
+                  &copy; 2024
+                </p>
+              </div>
+              <div class="right wow fadeInRight" data-wow-duration="1s">
+                <ul>
+                  <li><a href="#">Terms &amp; Condition</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mouse-cursor cursor-outer"></div>
+      <div class="mouse-cursor cursor-inner"></div>
+
+      <div class="progressbar">
+        <a href="#"><span class="text">To Top</span></a>
+        <span class="line"></span>
+      </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <!-- <script>
+      let url = "https://script.google.com/macros/s/AKfycbw4EtqHaaEo4ZKhYYvE5YLg_rou3dXUcgAadjF2d294reEvZLhgC4t5qj6C6KBqrjZHgg/exec";
+      let form = document.querySelector("#contact_form");
+      function SendEmail() {
+        Email.send({
+          Host: "smtp.elasticemail.com",
+          Username: "username",
+          Password: "password",
+          To: 'them@website.com',
+          From: "you@isp.com",
+          Subject: "This is the subject",
+          Body: "And this is the body"
+        }).then(
+          message => alert(message)
+        );
+      }
+
+
+
+
+    </script> -->
+    <script src="js/jquery.js"></script>
+    <!--[if lt IE 10]>
+      <script type="text/javascript" src="js/ie8.js"></script>
+    <![endif]-->
+    <script src="js/plugins.js"></script>
+    <script src="js/init.js"></script>
+</body>
+
+</html>
